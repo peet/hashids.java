@@ -145,11 +145,11 @@ public class Hashids {
   }
 
   private long unhash(String hash, String alphabet) {
-    int number = 0;
+    long number = 0;
 
     for (int i = 0; i < hash.length(); i++) {
       int pos = alphabet.indexOf(hash.charAt(i));
-      number += pos * (int) Math.pow(alphabet.length(), hash.length() - i - 1);
+      number += pos * (long) Math.pow(alphabet.length(), hash.length() - i - 1);
     }
 
     return number;
